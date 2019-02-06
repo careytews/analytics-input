@@ -1,0 +1,10 @@
+FROM fedora:26
+
+RUN dnf install -y libgo
+
+COPY input /usr/local/bin/
+
+EXPOSE 8080 48879
+
+ENTRYPOINT ["/usr/local/bin/input"]
+CMD ["output:/queue/input"]
